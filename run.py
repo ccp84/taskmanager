@@ -4,7 +4,7 @@ from taskmanager import app
 
 if __name__ == "__main__":
     app.run(
-        HOST=os.enviorn.get("IP"),
-        PORT=int(os.environ.get("PORT")),
-        DEBUG=os.environ.get("DEBUG")
+        host=os.environ.get("IP"),
+        port=int(os.environ.get("PORT")),
+        debug=os.environ.get("DEBUG")
     )
