@@ -8,7 +8,7 @@ def home():
     return render_template("tasks.html")
 
 
-@app.route("/categories")
+@app.route("/categories", methods=["GET", "POST"])
 def categories():
     return render_template("categories.html")
 
