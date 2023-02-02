@@ -27,10 +27,35 @@
         <!-- due date -->
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-calendar-days prefix light-blue-text text-darken-4"></i>
-                <input id="due_date" name="due_date" type="text" class="datepicker validate"
-                    required>
+                <i class="fas fa-calendar-plus prefix light-blue-text text-darken-4"></i>
+                <input id="due_date" name="due_date" type="text" class="datepicker validate" required>
                 <label for="due_date">Due Date</label>
+            </div>
+        </div>
+        <!-- is urgent -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-arrow-up prefix light-blue-text text-darken-4"></i>
+                <div class="switch">
+                    <label for="is_urgent">
+                        <input type="checkbox" id="is_urgent" name="is_urgent">
+                        <span class="lever"></span>
+                        Urgent?
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- category name -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                <select id="category_id" name="category_id" class="validate" required>
+                    <option value="" disabled selected>Choose your option</option>
+                    {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="category_id">Category Name</label>
             </div>
         </div>
         <!-- submit button -->

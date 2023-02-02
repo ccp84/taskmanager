@@ -9,4 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     format: "dd mmmm, yyyy",
     i18n: {done: "Select"}
   });
+
+  // dropdowns
+  let dropdown = document.querySelectorAll('select');
+  M.FormSelect.init(dropdown);
 });

@@ -39,15 +39,15 @@ def delete_category(category_id):
     category = Category.query.get_or_404(category_id)
 
 
-@app.task("/add_task", methods=["GET", "POST"])
+@app.route("/add_task", methods=["GET", "POST"])
 def add_task():
     categories = list(Category.query.order_by(Category.category_name).all())
     if request.method == "POST":
         task = Task(
             task_name=request.form.get("task_name"),
             task_description=request.form.get("task_description"),
-            is_urgent=request.form.get("is_urgent"),
-            due_date=bool(True if request.form.get("due_date") else False),
+            is_urgent=bool(True if request.form.get("is_urgent") else False),
+            due_date=request.form.get("due_date"),
             category_id=request.form.get("category_id")
         )
         db.session.add(task)
