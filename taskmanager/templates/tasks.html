@@ -10,5 +10,21 @@
         </a>
     </div>
 </div>
+<div class="row">
+    <div class="col s12 m6">
+        {% for task in tasks %}
+        <div class="card light-blue darken-4 center-align">
+            <div class="card-content white-text">
+                <span class="card-title">{{ task.task_name }}</span>
+                <p>{{ task.task_description }}</p>
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
